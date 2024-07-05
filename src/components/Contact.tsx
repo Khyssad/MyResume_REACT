@@ -3,6 +3,8 @@ import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
+const apiKey = import.meta.env.VITE_WEB3FORMS_API_KEY;
+
 const Contact = () => {
   useEffect(() => {
     AOS.init({
@@ -13,6 +15,7 @@ const Contact = () => {
   }, []);
 
   return (
+    
     <section id="contact" className="contact">
       <div className="container" data-aos="fade-up">
 
@@ -47,7 +50,7 @@ const Contact = () => {
           <div className="col-lg-8 mt-5 mt-lg-0" data-aos="fade-left" data-aos-delay="200">
             <form action="https://api.web3forms.com/submit" method="POST" className="php-email-form">
               {/* Replace with your Access Key */}
-              <input type="hidden" name="access_key" value="1656d0b5-3b26-4f50-bd07-74e069a3f35f" />
+              <input type="hidden" name="access_key" value={apiKey} />
 
               <div className="row">
                 <div className="col-md-6 form-group">
